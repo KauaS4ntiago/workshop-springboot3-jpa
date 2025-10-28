@@ -36,7 +36,6 @@ public class Order implements Serializable{
 	// Salvando no banco de dados como um inteiro 
     private Integer orderStatus;
 	
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "client_id")
 	private User client;
