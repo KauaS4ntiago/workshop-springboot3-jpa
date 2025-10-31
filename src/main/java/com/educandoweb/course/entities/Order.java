@@ -56,6 +56,14 @@ public class Order implements Serializable{
 		this.client = client;
 		setOrderStatus(orderStatus);
 	}
+	
+	public double getTotal() {
+		double total = 0.0;
+		for(OrderItem oi : items) {
+			total += oi.getSubTotal();
+		}
+		return total;
+	}
 
 	public Long getId() {
 		return id;
@@ -118,8 +126,6 @@ public class Order implements Serializable{
 			return false;
 		Order other = (Order) obj;
 		return Objects.equals(id, other.id);
-	}
-
-	
+	}	
 	
 }
